@@ -32,6 +32,7 @@ class Interface {
                 }
             })
         })
+        console.log('all interfaces has been implemented')
     }
 }
 // 
