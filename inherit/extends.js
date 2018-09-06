@@ -4,6 +4,7 @@ function extend (subClass, superClass) {
     subClass.prototype = new F()
     subClass.prototype.constructor = subClass
     if (superClass.prototype.constructor === Object.prototype.constructor) {
+        // 确保在调用父类构造函数时，能准确的初始化父类里的实例属性，强行扶正constructor的指向
         superClass.prototype.constructor = superClass
     }
 }
@@ -27,6 +28,12 @@ extend(Man, Human)
 
 Man.prototype.getAge = function () {
     return this.age
+}
+
+// 覆盖父类的函数，并取到父类的相关返回值，做二次封装
+Man.prototype.getName = function () {
+    var name = Man.superClass.getName.call(this)
+    return `my name is ${name}` 
 }
 
 var man = new Man('bob', 25)
