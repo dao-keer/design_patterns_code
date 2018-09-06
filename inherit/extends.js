@@ -17,10 +17,12 @@ Human.prototype.getName = function () {
 }
 
 function Man (name, age) {
+    // 组合继承模式，先调用父类的构造函数，初始化父类里的实例属性
     Man.superClass.constructor.call(this, name)
     this.age = age
 }
 
+// 继承父类的prototype对象里的方法
 extend(Man, Human)
 
 Man.prototype.getAge = function () {
@@ -30,4 +32,5 @@ Man.prototype.getAge = function () {
 var man = new Man('bob', 25)
 console.log(Man)
 console.log(Man.superClass)
+console.log(man)
 console.log(man.getName())
