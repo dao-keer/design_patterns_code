@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./callChainnig.js"></script>
+</head>
+<body>
+    <div id='a'></div>
+    <div id='b'>i hate you</div>
+    <div id='c'></div>
+    <div id='d'></div>
+    <script>
+        window.onload = function() {
+            installer(window, '$')
+            $('a', 'c', 'd').each((item, index) => { item.innerHTML = 'i love you' }).setStyle('color', 'red').addEvent('click', function(){this.style['display'] = 'none'})
+        }
+    </script>
+</body>
+</html>
