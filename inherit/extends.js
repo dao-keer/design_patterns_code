@@ -41,3 +41,5 @@ console.log(Man)
 console.log(Man.superClass)
 console.log(man)
 console.log(man.getName())
+
+module.exports = extend

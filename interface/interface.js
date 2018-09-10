@@ -55,3 +55,5 @@ function test (originObj) { // implements test
 }
 
 test(TestClass)
+
+module.exports = Interface
